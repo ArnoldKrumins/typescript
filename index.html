@@ -7,4 +7,18 @@
 <body>
 
 </body>
+
+<script src="patterns/strategy.js"></script>
+
+
+<script type="application/javascript">
+
+    var tp = new taxProvider();
+    tp.setup();
+
+    console.log(tp.get(1).calculate(10));
+    console.log(tp.get(2).calculate(10));
+    console.log(tp.get(3).calculate(10));
+</script>
+
 </html>
