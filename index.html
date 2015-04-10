@@ -16,9 +16,14 @@
     var tp = new taxProvider();
     tp.setup();
 
-    console.log(tp.get(1).calculate(10));
-    console.log(tp.get(2).calculate(10));
-    console.log(tp.get(3).calculate(10));
+//    tp.init(1,new usTax());
+//    tp.init(2,ukTax());
+//    tp.init(3,seTax());
+
+    console.log(tp.get(1).calculate());
+    console.log(tp.get(2).calculate());
+    console.log(tp.get(3).calculate());
+
 </script>
 
 </html>

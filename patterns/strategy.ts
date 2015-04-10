@@ -2,40 +2,41 @@
  * Created by arnold.krumins on 10/04/2015.
  */
 interface taxable{
-
-    calculate(val:number);
-
+    calculate();
 }
 
 class tax{
-
-
+    value:number;
+    constructor(paramvalue: number) { this.value = paramvalue; }
 }
 
 
 class ukTax extends tax implements taxable{
 
-    calculate(val:number){
+    constructor(value: number) { super(value); }
 
-        return val * 2;
+    calculate(){
+        return this.value * 2;
     }
 }
 
 
-class usTax implements taxable{
+class usTax extends tax implements taxable{
 
-    calculate(val:number){
+    constructor(value: number) { super(value); }
 
-        return val * 2.5;
+    calculate(){
+        return this.value * 2.5;
     }
 }
 
 
-class seTax implements taxable{
+class seTax extends tax implements taxable{
 
-    calculate(val:number){
+    constructor(value: number) { super(value); }
 
-        return val * 1.5;
+    calculate(){
+        return this.value * 1.5;
     }
 }
 
@@ -52,9 +53,9 @@ class taxProvider{
 
    public setup(){
 
-       this.dict[1] = new ukTax();
-       this.dict[2] = new usTax();
-       this.dict[3] = new seTax();
+       this.dict[1] = new ukTax(10);
+       this.dict[2] = new usTax(10);
+       this.dict[3] = new seTax(10);
    }
 
    public get(index:number){
