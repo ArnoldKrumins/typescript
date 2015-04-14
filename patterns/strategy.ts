@@ -51,7 +51,7 @@ class seTax extends tax implements taxable{
 }
 
 
-//Create a 'taxProvier' class to access tax strategy objects
+//Create a 'taxProvier' factory class to access tax strategy objects
 class taxProvider{
 
    private dict: { [index: number]: tax; } = {};
