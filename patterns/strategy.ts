@@ -6,7 +6,6 @@
 /// <reference path="models/tax.ts" />
 /// <reference path="models/money.ts" />
 
-
 class ukTax extends tax implements taxable{
 
     constructor(value: number){
