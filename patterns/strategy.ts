@@ -11,7 +11,6 @@ class tax{
     constructor(paramvalue: number) { this.value = paramvalue; }
 }
 
-
 class ukTax extends tax implements taxable{
 
     constructor(value: number){
@@ -36,7 +35,6 @@ class usTax extends tax implements taxable{
         return this.name + ' - ' + this.value * 2.5;
     }
 }
-
 
 class seTax extends tax implements taxable{
 
