@@ -10,12 +10,14 @@ enum currencyEnum{
 
   class money {
 
-    private value: number = 0;
-    private currency;
+    public value: number;
+    public name: string;
+    public currency;
 
 
-    constructor(value:number, currency:currencyEnum){
+    constructor(value:number, name:string, currency:currencyEnum){
         this.value = value;
+        this.name = name;
         this.currency = currencyEnum;
     }
 

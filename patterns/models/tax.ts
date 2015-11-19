@@ -1,8 +1,12 @@
 /**
  * Created by arnoldkrumins on 19/11/15.
  */
+/// <reference path="money.ts" />
+
      class tax{
-        value:number;
-        name:string;
-        constructor(paramvalue: number) { this.value = paramvalue; }
+        unit: money;
+        constructor(currency: money) { this.unit = currency; }
+
+    sss
+
     }

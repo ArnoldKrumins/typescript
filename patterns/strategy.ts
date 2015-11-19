@@ -8,38 +8,35 @@
 
 class ukTax extends tax implements taxable{
 
-    constructor(value: number){
-        this.name ='UK Tax';
-        super(value);
+    constructor(currency: money){
+        super(currency);
     }
 
     calculate(){
-        return this.name + ' - ' + this.value * 2;
+        return this.unit.name.concat('- ',this.unit.value * 2);
     }
 }
 
 
 class usTax extends tax implements taxable{
 
-    constructor(value: number) {
-        this.name ='US Tax';
-        super(value);
+    constructor(currency: money) {
+        super(currency);
     }
 
     calculate(){
-        return this.name + ' - ' + this.value * 2.5;
+        return this.unit.name.concat('- ',this.unit.value  * 2.5);
     }
 }
 
 class seTax extends tax implements taxable{
 
-    constructor(value: number) {
-        this.name ='SE Tax';
-        super(value);
+    constructor(currency: money) {
+        super(currency);
     }
 
     calculate(){
-        return this.name + ' - ' + this.value * 1.5;
+        return this.unit.name.concat('- ',this.unit.value  * 1.5);
     }
 }
 
@@ -50,9 +47,9 @@ class taxProvider {
    private dict: { [index: number]: tax; } = {};
 
     constructor(){
-        this.dict[1] = new ukTax(10);
-        this.dict[2] = new usTax(10);
-        this.dict[3] = new seTax(10);
+        this.dict[1] = new ukTax(new money(10,'UK Tax',currencyEnum.GBP));
+        this.dict[2] = new usTax(new money(100,'US Tax',currencyEnum.USD);
+        this.dict[3] = new seTax(new money(200,'SE Tax',currencyEnum.SEK));
     }
 
    public get(index:number){
