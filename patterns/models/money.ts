@@ -2,6 +2,7 @@
  * Created by arnoldkrumins on 19/11/15.
  */
 
+
 enum currencyEnum{
     GBP,
     SEK,
@@ -9,7 +10,7 @@ enum currencyEnum{
     AUD
 }
 
-class money {
+  class money {
 
     private value: number = 0;
     private currency;
@@ -21,3 +22,5 @@ class money {
     }
 
 }
+
+

@@ -1,15 +1,11 @@
 /**
  * Created by arnold.krumins on 10/04/2015.
  */
-interface taxable{
-    calculate();
-}
 
-class tax{
-    value:number;
-    name:string;
-    constructor(paramvalue: number) { this.value = paramvalue; }
-}
+/// <reference path="interfaces/taxable.ts" />
+/// <reference path="models/tax.ts" />
+/// <reference path="models/money.ts" />
+
 
 class ukTax extends tax implements taxable{
 
@@ -50,7 +46,7 @@ class seTax extends tax implements taxable{
 
 
 //Create a 'taxProvier' factory class to access tax strategy objects
-class taxProvider{
+class taxProvider {
 
    private dict: { [index: number]: tax; } = {};
 
@@ -65,5 +61,10 @@ class taxProvider{
     }
 
 }
+
+
+
+
+
 
 
