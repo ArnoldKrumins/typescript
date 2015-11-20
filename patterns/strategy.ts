@@ -63,7 +63,7 @@ class taxProvider {
         this.dict[1] = new ukTax(new money(100,'UK Tax',currencyEnum.GBP));
         this.dict[2] = new usTax(new money(100,'US Tax',currencyEnum.USD));
         this.dict[3] = new seTax(new money(100,'SE Tax',currencyEnum.SEK));
-        this.dict[4] = new seTax(new money(100,'Aus Tax',currencyEnum.AUD));
+        this.dict[4] = new ausTax(new money(100,'Aus Tax',currencyEnum.AUD));
     }
 
    public get(index:number){
