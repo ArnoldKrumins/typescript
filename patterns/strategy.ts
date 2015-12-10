@@ -19,7 +19,6 @@ class ukTax extends tax implements taxable{
     }
 }
 
-
 class usTax extends tax implements taxable{
 
     constructor(value: number) {
