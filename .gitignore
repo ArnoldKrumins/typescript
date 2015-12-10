@@ -1,0 +1,6 @@
+/projectFilesBackup
+/.gitignore
+*.js
+*.map
+**/.idea
+/bower_components

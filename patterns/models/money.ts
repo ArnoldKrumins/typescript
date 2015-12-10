@@ -1,8 +1,6 @@
 /**
  * Created by arnoldkrumins on 19/11/15.
  */
-
-
 enum currencyEnum{
     GBP,
     SEK,
@@ -12,13 +10,15 @@ enum currencyEnum{
 
   class money {
 
-    private value: number = 0;
-    private currency;
+    public value: number;
+    public name: string;
+    public currency:currencyEnum;
 
 
-    constructor(value:number, currency:currencyEnum){
+    constructor(value:number, name:string, currency:currencyEnum){
         this.value = value;
-        this.currency = currencyEnum;
+        this.name = name;
+        this.currency = currency;
     }
 
 }

@@ -6,42 +6,51 @@
 /// <reference path="models/tax.ts" />
 /// <reference path="models/money.ts" />
 
-
 class ukTax extends tax implements taxable{
 
-    constructor(value: number){
-        this.name ='UK Tax';
-        super(value);
+    constructor(currency: money){
+        super(currency);
     }
 
     calculate(){
-        return this.name + ' - ' + this.value * 2;
+        return super.Render(this.unit.currency);
     }
 }
 
 class usTax extends tax implements taxable{
 
-    constructor(value: number) {
-        this.name ='US Tax';
-        super(value);
+    constructor(currency: money) {
+        super(currency);
     }
 
     calculate(){
-        return this.name + ' - ' + this.value * 2.5;
+        return super.Render(this.unit.currency);
     }
 }
 
 class seTax extends tax implements taxable{
 
-    constructor(value: number) {
-        this.name ='SE Tax';
-        super(value);
+    constructor(currency: money) {
+        super(currency);
     }
 
     calculate(){
-        return this.name + ' - ' + this.value * 1.5;
+        return super.Render(this.unit.currency);
     }
 }
+
+
+class ausTax extends tax implements taxable{
+
+    constructor(currency: money) {
+        super(currency);
+    }
+
+    calculate(){
+        return super.Render(this.unit.currency);
+    }
+}
+
 
 
 //Create a 'taxProvier' factory class to access tax strategy objects
@@ -50,9 +59,10 @@ class taxProvider {
    private dict: { [index: number]: tax; } = {};
 
     constructor(){
-        this.dict[1] = new ukTax(10);
-        this.dict[2] = new usTax(10);
-        this.dict[3] = new seTax(10);
+        this.dict[1] = new ukTax(new money(100,'UK Tax',currencyEnum.GBP));
+        this.dict[2] = new usTax(new money(100,'US Tax',currencyEnum.USD));
+        this.dict[3] = new seTax(new money(100,'SE Tax',currencyEnum.SEK));
+        this.dict[4] = new ausTax(new money(100,'Aus Tax',currencyEnum.AUD));
     }
 
    public get(index:number){
