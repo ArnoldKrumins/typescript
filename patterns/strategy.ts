@@ -17,6 +17,8 @@ class ukTax extends tax implements taxable{
     }
 }
 
+
+
 class usTax extends tax implements taxable{
 
     constructor(currency: money) {
@@ -27,6 +29,8 @@ class usTax extends tax implements taxable{
         return super.Render(this.unit.currency);
     }
 }
+
+
 
 class seTax extends tax implements taxable{
 

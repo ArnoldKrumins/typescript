@@ -11,44 +11,52 @@ var __extends = (this && this.__extends) || function (d, b) {
 /// <reference path="models/money.ts" />
 var ukTax = (function (_super) {
     __extends(ukTax, _super);
-    function ukTax(value) {
-        this.name = 'UK Tax';
-        _super.call(this, value);
+    function ukTax(currency) {
+        _super.call(this, currency);
     }
     ukTax.prototype.calculate = function () {
-        return this.name + ' - ' + this.value * 2;
+        return _super.prototype.Render.call(this, this.unit.currency);
     };
     return ukTax;
 })(tax);
 var usTax = (function (_super) {
     __extends(usTax, _super);
-    function usTax(value) {
-        this.name = 'US Tax';
-        _super.call(this, value);
+    function usTax(currency) {
+        _super.call(this, currency);
     }
     usTax.prototype.calculate = function () {
-        return this.name + ' - ' + this.value * 2.5;
+        return _super.prototype.Render.call(this, this.unit.currency);
     };
     return usTax;
 })(tax);
 var seTax = (function (_super) {
     __extends(seTax, _super);
-    function seTax(value) {
-        this.name = 'SE Tax';
-        _super.call(this, value);
+    function seTax(currency) {
+        _super.call(this, currency);
     }
     seTax.prototype.calculate = function () {
-        return this.name + ' - ' + this.value * 1.5;
+        return _super.prototype.Render.call(this, this.unit.currency);
     };
     return seTax;
+})(tax);
+var ausTax = (function (_super) {
+    __extends(ausTax, _super);
+    function ausTax(currency) {
+        _super.call(this, currency);
+    }
+    ausTax.prototype.calculate = function () {
+        return _super.prototype.Render.call(this, this.unit.currency);
+    };
+    return ausTax;
 })(tax);
 //Create a 'taxProvier' factory class to access tax strategy objects
 var taxProvider = (function () {
     function taxProvider() {
         this.dict = {};
-        this.dict[1] = new ukTax(10);
-        this.dict[2] = new usTax(10);
-        this.dict[3] = new seTax(10);
+        this.dict[1] = new ukTax(new money(100, 'UK Tax', currencyEnum.GBP));
+        this.dict[2] = new usTax(new money(100, 'US Tax', currencyEnum.USD));
+        this.dict[3] = new seTax(new money(100, 'SE Tax', currencyEnum.SEK));
+        this.dict[4] = new ausTax(new money(100, 'Aus Tax', currencyEnum.AUD));
     }
     taxProvider.prototype.get = function (index) {
         return this.dict[index];

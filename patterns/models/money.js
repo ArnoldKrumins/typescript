@@ -9,10 +9,10 @@ var currencyEnum;
     currencyEnum[currencyEnum["AUD"] = 3] = "AUD";
 })(currencyEnum || (currencyEnum = {}));
 var money = (function () {
-    function money(value, currency) {
-        this.value = 0;
+    function money(value, name, currency) {
         this.value = value;
-        this.currency = currencyEnum;
+        this.name = name;
+        this.currency = currency;
     }
     return money;
 })();
